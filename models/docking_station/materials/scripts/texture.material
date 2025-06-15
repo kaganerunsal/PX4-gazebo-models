@@ -1,0 +1,14 @@
+material my_material
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        # path is relative to the .material’s folder
+        texture ../textures/april_tag_36h12_0.png
+      }
+    }
+  }
+}
