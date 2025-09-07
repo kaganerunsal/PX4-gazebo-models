@@ -139,8 +139,8 @@
       <plugin name='World control' filename='WorldControl'>
         <gz-gui>
           <title>World control</title>
-          <property type='bool' key='showTitleBar'>0</property>
-          <property type='bool' key='resizable'>0</property>
+          <property type='bool' key='showTitleBar'>false</property>
+          <property type='bool' key='resizable'>false</property>
           <property type='double' key='height'>72</property>
           <property type='double' key='width'>150</property>
           <property type='double' key='z'>1</property>
@@ -158,8 +158,8 @@
       <plugin name='World stats' filename='WorldStats'>
         <gz-gui>
           <title>World stats</title>
-          <property type='bool' key='showTitleBar'>0</property>
-          <property type='bool' key='resizable'>0</property>
+          <property type='bool' key='showTitleBar'>false</property>
+          <property type='bool' key='resizable'>false</property>
           <property type='double' key='height'>110</property>
           <property type='double' key='width'>290</property>
           <property type='double' key='z'>1</property>
@@ -190,7 +190,22 @@
     <light name='Light' type='point'>
       <pose>0 0 5 0 0 0</pose>
       <cast_shadows>false</cast_shadows>
-      <intensity>10</intensity>
+      <intensity>5</intensity>
+    </light>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 5 0 0 0</pose>
+      <diffuse>1.0 1.0 1.0 1.0</diffuse>
+      <specular>0.5 0.5 0.5 1.0</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 -0.5 -1</direction>
+      <intensity>2</intensity>
     </light>
     
     <include>

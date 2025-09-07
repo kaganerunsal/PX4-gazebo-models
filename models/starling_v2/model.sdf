@@ -35,21 +35,21 @@
       </collision>
 
       <visual name="base_link_visual">
-        <pose>0 0 0 1.57079632679 0 -1.57079632679</pose>
+        <pose>0 0 0 1.57079632679 0 1.57079632679</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
             <uri>meshes/Starling_base.obj</uri>
           </mesh>
         </geometry>
-        <cast_shadows>0</cast_shadows>
+        <cast_shadows>false</cast_shadows>
       </visual>
 
       <sensor name="imu_sensor" type="imu">
-        <always_on>1</always_on>
+        <always_on>true</always_on>
         <update_rate>200</update_rate>
         <imu>
-          <enable_orientation>1</enable_orientation>
+          <enable_orientation>true</enable_orientation>
           <angular_velocity>
             <x>
               <noise type="gaussian">
@@ -124,7 +124,7 @@
       </sensor>
 
       <sensor name="air_pressure_sensor" type="air_pressure">
-        <always_on>1</always_on>
+        <always_on>true</always_on>
         <update_rate>50</update_rate>
         <air_pressure>
           <pressure>
@@ -137,7 +137,7 @@
       </sensor>
 
       <sensor name="magnetometer_sensor" type="magnetometer">
-        <always_on>1</always_on>
+        <always_on>true</always_on>
         <update_rate>100</update_rate>
         <magnetometer>
           <x>
@@ -159,9 +159,9 @@
       </sensor>
 
       <sensor name="IMX412_front" type="camera">
-        <pose>-0.07 -0.006 0.002 0 0 3.14159265</pose>
-        <always_on>0</always_on>
-        <update_rate>1</update_rate>
+        <pose>0.07 0.006 0.002 0 0 0</pose>
+        <always_on>false</always_on>
+        <update_rate>5</update_rate>
         <camera>
           <horizontal_fov>1.632</horizontal_fov>
           <lens>
@@ -199,8 +199,8 @@
       </sensor>
 
       <sensor name="AR0144_front" type="camera">
-        <pose>-0.07 -0.006 0.010 0 0 3.14159265</pose>
-        <always_on>0</always_on>
+        <pose>0.07 0.006 0.010 0 0 0</pose>
+        <always_on>false</always_on>
         <update_rate>1</update_rate>
         <camera>
           <horizontal_fov>2.303</horizontal_fov>
@@ -239,8 +239,8 @@
       </sensor>
 
        <sensor name="AR0144_back" type="camera">
-        <pose>0.062 0.010 0.016 0 0 0</pose>
-        <always_on>0</always_on>
+        <pose>-0.062 -0.010 0.016 0 0 3.14159265</pose>
+        <always_on>false</always_on>
         <update_rate>1</update_rate>
         <camera>
           <horizontal_fov>2.303</horizontal_fov>
@@ -279,9 +279,9 @@
       </sensor>
 
       <sensor name="AR0144_down" type="camera">
-        <pose>0.057 -0.011 -0.009 0 1.571 0</pose>
-        <always_on>0</always_on>
-        <update_rate>1</update_rate>
+        <pose>-0.057 0.011 -0.009 0 1.571 -1.571</pose>
+        <always_on>false</always_on>
+        <update_rate>10</update_rate>
         <camera>
           <horizontal_fov>2.303</horizontal_fov>
           <lens>
@@ -319,8 +319,8 @@
       </sensor>
 
       <sensor name="pmd_flexx2_tof" type="depth_camera">
-        <pose>-0.07 0.0095 0.016 0 0 3.14</pose> <!-- Adjust position and orientation as needed -->
-        <always_on>0</always_on>
+        <pose>0.07 -0.0095 0.016 0 0 0</pose> <!-- Adjust position and orientation as needed -->
+        <always_on>true</always_on>
         <update_rate>1</update_rate>
         <camera>
           <horizontal_fov>0.9773843811168246</horizontal_fov> <!-- 56 degrees in radians -->
@@ -334,13 +334,12 @@
             <far>4.0</far>
           </clip>
         </camera>
-        <always_on>true</always_on>
         <visualize>true</visualize>
       </sensor>
 
       <sensor name="VL53L1X_down" type="gpu_ray">
-        <pose>0.057 0.011 -0.009 0 1.571 0</pose>
-        <always_on>1</always_on>
+        <pose>-0.057 -0.011 -0.009 0 1.571 0</pose>
+        <always_on>true</always_on>
         <update_rate>10</update_rate>
         <ray>
           <scan>
@@ -371,7 +370,7 @@
       </sensor>
 
       <sensor name="navsat_sensor" type="navsat">
-        <always_on>1</always_on>
+        <always_on>true</always_on>
         <update_rate>10</update_rate>
       </sensor>
 
@@ -385,12 +384,12 @@
         <pose>0 0 0 0 0 0</pose>
         <mass>0.005</mass>
         <inertia>
-          <ixx>9.75e-07</ixx>
+          <ixx>5.3e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>8.13545e-05</iyy>
+          <iyy>5.3e-06</iyy>
           <iyz>0</iyz>
-          <izz>8.22545e-05</izz>
+          <izz>1.06e-05</izz>
         </inertia>
       </inertial>
 
@@ -420,9 +419,9 @@
             <uri>meshes/Starling_propeller_CCW.obj</uri>
           </mesh>
         </geometry>
-        <cast_shadows>0</cast_shadows>
+        <cast_shadows>false</cast_shadows>
       </visual>
-      <gravity>1</gravity>
+      <gravity>true</gravity>
       <velocity_decay />
     </link>
 
@@ -434,12 +433,12 @@
         <pose>0 0 0 0 0 0</pose>
         <mass>0.005</mass>
         <inertia>
-          <ixx>9.75e-07</ixx>
+          <ixx>5.3e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>8.13545e-05</iyy>
+          <iyy>5.3e-06</iyy>
           <iyz>0</iyz>
-          <izz>8.22545e-05</izz>
+          <izz>1.06e-05</izz>
         </inertia>
       </inertial>
 
@@ -469,9 +468,9 @@
             <uri>meshes/Starling_propeller_CCW.obj</uri>
           </mesh>
         </geometry>
-        <cast_shadows>0</cast_shadows>
+        <cast_shadows>false</cast_shadows>
       </visual>
-      <gravity>1</gravity>
+      <gravity>true</gravity>
       <velocity_decay />
     </link>
 
@@ -483,12 +482,12 @@
         <pose>0 0 0 0 0 0</pose>
         <mass>0.005</mass>
         <inertia>
-          <ixx>9.75e-07</ixx>
+          <ixx>5.3e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>8.13545e-05</iyy>
+          <iyy>5.3e-06</iyy>
           <iyz>0</iyz>
-          <izz>8.22545e-05</izz>
+          <izz>1.06e-05</izz>
         </inertia>
       </inertial>
 
@@ -518,9 +517,9 @@
             <uri>meshes/Starling_propeller_CW.obj</uri>
           </mesh>
         </geometry>
-        <cast_shadows>0</cast_shadows>
+        <cast_shadows>false</cast_shadows>
       </visual>
-      <gravity>1</gravity>
+      <gravity>true</gravity>
       <velocity_decay />
     </link>
 
@@ -532,12 +531,12 @@
         <pose>0 0 0 0 0 0</pose>
         <mass>0.005</mass>
         <inertia>
-          <ixx>9.75e-07</ixx>
+          <ixx>5.3e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>8.13545e-05</iyy>
+          <iyy>5.3e-06</iyy>
           <iyz>0</iyz>
-          <izz>8.22545e-05</izz>
+          <izz>1.06e-05</izz>
         </inertia>
       </inertial>
 
@@ -567,9 +566,9 @@
             <uri>meshes/Starling_propeller_CW.obj</uri>
           </mesh>
         </geometry>
-        <cast_shadows>0</cast_shadows>
+        <cast_shadows>false</cast_shadows>
       </visual>
-      <gravity>1</gravity>
+      <gravity>true</gravity>
       <velocity_decay />
     </link>
 
@@ -653,7 +652,7 @@
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <motorNumber>0</motorNumber>
       <rotorDragCoefficient>4.9125e-09</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
@@ -670,7 +669,7 @@
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <motorNumber>1</motorNumber>
       <rotorDragCoefficient>4.9125e-09</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
@@ -687,7 +686,7 @@
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <motorNumber>2</motorNumber>
       <rotorDragCoefficient>4.9125e-09</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient> 
+      <rollingMomentCoefficient>0</rollingMomentCoefficient> 
       <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
@@ -704,18 +703,17 @@
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <motorNumber>3</motorNumber>
       <rotorDragCoefficient>4.9125e-09</rotorDragCoefficient>
-      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
 
-    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-  <!-- Optional: pick a custom topic; if omitted it defaults to "/model/<model>/joint_state" -->
-      <topic>rotor_joint_states</topic>
-      <joint_name>rotor_0_joint</joint_name>
-      <joint_name>rotor_1_joint</joint_name>
-      <joint_name>rotor_2_joint</joint_name>
-      <joint_name>rotor_3_joint</joint_name>
+    <plugin name="gz::sim::systems::PosePublisher" filename="gz-sim-pose-publisher-system">
+        <use_pose_vector_msg>true</use_pose_vector_msg>
+        <publish_nested_model_pose>true</publish_nested_model_pose>
+        <publish_collision_pose>false</publish_collision_pose>
+        <publish_visual_pose>false</publish_visual_pose>
+        <publish_link_pose>false</publish_link_pose> 
     </plugin>
 
   </model>
