@@ -160,7 +160,6 @@
         <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
             <joint_name>tray_joint</joint_name>
             <topic>/docking_station/tray_pos</topic>
-            <publish_rate>10.0</publish_rate>
         </plugin>
 
         <plugin name="gz::sim::systems::PosePublisher" filename="gz-sim-pose-publisher-system">
@@ -169,6 +168,7 @@
             <publish_collision_pose>false</publish_collision_pose>
             <publish_visual_pose>false</publish_visual_pose>
             <publish_link_pose>false</publish_link_pose> 
+            <update_frequency>100</update_frequency>
         </plugin>
 
   </model>

@@ -715,6 +715,7 @@
         <publish_collision_pose>false</publish_collision_pose>
         <publish_visual_pose>false</publish_visual_pose>
         <publish_link_pose>false</publish_link_pose> 
+        <update_frequency>100</update_frequency>
     </plugin>
 
   </model>
