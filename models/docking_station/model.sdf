@@ -106,7 +106,7 @@
             </visual>
 
             <visual name="tray_face">
-                <pose>0.0 -0.13 -0.06 0 0 0</pose>
+                <pose>0.0 -0.12 -0.06 0 0 0</pose>
                 <geometry>
                     <box>
                       <size>0.125 0.125 0.001</size>
