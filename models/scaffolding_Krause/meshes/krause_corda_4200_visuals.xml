@@ -1,0 +1,32 @@
+      <visual name="visual_dark">
+        <geometry><mesh><uri>model://krause_corda_4200/meshes/krause_corda_4200_dark.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.0600 0.0600 0.0700 1.0000</ambient>
+          <diffuse>0.1500 0.1500 0.1600 1.0000</diffuse>
+          <specular>0.1000 0.1000 0.1000 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_red">
+        <geometry><mesh><uri>model://krause_corda_4200/meshes/krause_corda_4200_red.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.3500 0.0500 0.1200 1.0000</ambient>
+          <diffuse>0.7200 0.1000 0.2500 1.0000</diffuse>
+          <specular>0.2000 0.2000 0.2000 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_alu">
+        <geometry><mesh><uri>model://krause_corda_4200/meshes/krause_corda_4200_alu.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.5500 0.5700 0.6000 1.0000</ambient>
+          <diffuse>0.7200 0.7400 0.7800 1.0000</diffuse>
+          <specular>0.4500 0.4500 0.4500 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_wood">
+        <geometry><mesh><uri>model://krause_corda_4200/meshes/krause_corda_4200_wood.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.4200 0.3400 0.2400 1.0000</ambient>
+          <diffuse>0.6600 0.5400 0.3800 1.0000</diffuse>
+          <specular>0.0500 0.0500 0.0500 1.0000</specular>
+        </material>
+      </visual>

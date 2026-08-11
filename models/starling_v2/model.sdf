@@ -163,11 +163,21 @@
         <always_on>false</always_on>
         <update_rate>5</update_rate>
         <camera>
-          <horizontal_fov>1.632</horizontal_fov>
+          <!-- MSU-M0107/M0161 (Sony Starvis IMX412, 2.7 mm M12 lens): real FOV is
+               H 120.4 deg, V 93.5 deg, D 146 deg (docs.modalai.com/M0161).
+               NOTE the datasheet's "Fov(DxHxV)" header is mis-ordered - the values are
+               listed H, V, D. This field previously held 1.632 rad, which is the VERTICAL
+               93.5 deg, so the sim camera was far too narrow.
+               The real lens is a fisheye; Gazebo renders rectilinear, so only one axis can
+               match. Horizontal is matched here, which makes the rendered vertical 105.3
+               deg rather than the true 93.5. The intrinsics below are derived from this
+               horizontal_fov so the two blocks agree - they are NOT a measured calibration
+               (ModalAI publishes none). -->
+          <horizontal_fov>2.1014</horizontal_fov>
           <lens>
             <intrinsics>
-              <fx>1449</fx>
-              <fy>1497</fy>
+              <fx>1161</fx>
+              <fy>1161</fy>
               <cx>2028</cx>
               <cy>1520</cy>
               <s>0</s>
@@ -321,18 +331,30 @@
       <sensor name="pmd_flexx2_tof" type="depth_camera">
         <pose>0.07 -0.0095 0.016 0 0 0</pose> <!-- Adjust position and orientation as needed -->
         <always_on>true</always_on>
-        <update_rate>1</update_rate>
+        <update_rate>5</update_rate>
         <camera>
-          <horizontal_fov>0.9773843811168246</horizontal_fov> <!-- 56 degrees in radians -->
+          <!-- 1.85 rad = 106 deg horizontal, per the M0178 datasheet. Vertical (86 deg real)
+               and diagonal are not settable: gz derives them from this and the 4:3 aspect. -->
+          <horizontal_fov>1.85</horizontal_fov>
           <image>
-            <width>224</width>
-            <height>172</height>
+            <width>240</width>
+            <height>180</height>
             <format>R8G8B8</format>
           </image>
           <clip>
             <near>0.1</near>
-            <far>4.0</far>
+            <far>5.0</far>
           </clip>
+          <!-- Depth noise, off. Both fields 0 => gz builds no noise model at all, so this
+               costs nothing. The datasheet gives no figure (depth resolution "TBD"); ~1% of
+               range is typical, so try stddev 0.02 (m). Note gz applies one constant stddev,
+               it does not scale with range, and keep it well under truncation_distance
+               (0.40 m in common_params.py) or surfaces stop fusing. -->
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.0</stddev>
+          </noise>
         </camera>
         <visualize>true</visualize>
       </sensor>

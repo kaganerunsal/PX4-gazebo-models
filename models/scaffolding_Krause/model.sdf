@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="krause_corda_4200">
+    <static>true</static>
+    <link name="base_link">
+      <inertial>
+        <pose>0 0 2.36496 0 0 0</pose>
+        <mass>48</mass>
+        <inertia>
+          <ixx>71.7557</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>86.8674</iyy><iyz>0</iyz><izz>23.125</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual_dark">
+        <geometry><mesh><uri>meshes/krause_corda_4200_dark.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.0600 0.0600 0.0700 1.0000</ambient>
+          <diffuse>0.1500 0.1500 0.1600 1.0000</diffuse>
+          <specular>0.1000 0.1000 0.1000 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_red">
+        <geometry><mesh><uri>meshes/krause_corda_4200_red.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.3500 0.0500 0.1200 1.0000</ambient>
+          <diffuse>0.7200 0.1000 0.2500 1.0000</diffuse>
+          <specular>0.2000 0.2000 0.2000 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_alu">
+        <geometry><mesh><uri>meshes/krause_corda_4200_alu.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.5500 0.5700 0.6000 1.0000</ambient>
+          <diffuse>0.7200 0.7400 0.7800 1.0000</diffuse>
+          <specular>0.4500 0.4500 0.4500 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_wood">
+        <geometry><mesh><uri>meshes/krause_corda_4200_wood.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.4200 0.3400 0.2400 1.0000</ambient>
+          <diffuse>0.6600 0.5400 0.3800 1.0000</diffuse>
+          <specular>0.0500 0.0500 0.0500 1.0000</specular>
+        </material>
+      </visual>
+      <collision name="c_00">
+        <pose>-0.75 -0.3 2.1725 0 0 0</pose>
+        <geometry><box><size>0.06 0.06 4.055</size></box></geometry>
+      </collision>
+      <collision name="c_01">
+        <pose>-0.75 0.3 2.1725 0 0 0</pose>
+        <geometry><box><size>0.06 0.06 4.055</size></box></geometry>
+      </collision>
+      <collision name="c_02">
+        <pose>0.75 -0.3 2.1725 0 0 0</pose>
+        <geometry><box><size>0.06 0.06 4.055</size></box></geometry>
+      </collision>
+      <collision name="c_03">
+        <pose>0.75 0.3 2.1725 0 0 0</pose>
+        <geometry><box><size>0.06 0.06 4.055</size></box></geometry>
+      </collision>
+      <collision name="c_04">
+        <pose>0 0 2.9775 0 0 0</pose>
+        <geometry><box><size>1.5 0.56 0.045</size></box></geometry>
+      </collision>
+      <collision name="c_05">
+        <pose>0 -0.3 4.15 0 0 0</pose>
+        <geometry><box><size>1.5 0.04 0.04</size></box></geometry>
+      </collision>
+      <collision name="c_06">
+        <pose>0 0.3 4.15 0 0 0</pose>
+        <geometry><box><size>1.5 0.04 0.04</size></box></geometry>
+      </collision>
+      <collision name="c_07">
+        <pose>0 0 0.0625 0 0 0</pose>
+        <geometry><box><size>1.65 1.35 0.125</size></box></geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

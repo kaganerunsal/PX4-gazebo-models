@@ -1,0 +1,40 @@
+      <visual name="visual_alu">
+        <geometry><mesh><uri>model://zarges_z600_40284/meshes/zarges_z600_40284_alu.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.5500 0.5700 0.6000 1.0000</ambient>
+          <diffuse>0.7200 0.7400 0.7800 1.0000</diffuse>
+          <specular>0.4500 0.4500 0.4500 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_dark">
+        <geometry><mesh><uri>model://zarges_z600_40284/meshes/zarges_z600_40284_dark.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.0600 0.0600 0.0700 1.0000</ambient>
+          <diffuse>0.1500 0.1500 0.1600 1.0000</diffuse>
+          <specular>0.1000 0.1000 0.1000 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_blue">
+        <geometry><mesh><uri>model://zarges_z600_40284/meshes/zarges_z600_40284_blue.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.0500 0.1800 0.3800 1.0000</ambient>
+          <diffuse>0.1000 0.3500 0.7000 1.0000</diffuse>
+          <specular>0.1500 0.1500 0.1500 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_yellow">
+        <geometry><mesh><uri>model://zarges_z600_40284/meshes/zarges_z600_40284_yellow.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.4500 0.4000 0.0500 1.0000</ambient>
+          <diffuse>0.9000 0.8000 0.1000 1.0000</diffuse>
+          <specular>0.1500 0.1500 0.1500 1.0000</specular>
+        </material>
+      </visual>
+      <visual name="visual_alu_dark">
+        <geometry><mesh><uri>model://zarges_z600_40284/meshes/zarges_z600_40284_alu_dark.dae</uri></mesh></geometry>
+        <material>
+          <ambient>0.4000 0.4200 0.4500 1.0000</ambient>
+          <diffuse>0.5500 0.5700 0.6000 1.0000</diffuse>
+          <specular>0.3500 0.3500 0.3500 1.0000</specular>
+        </material>
+      </visual>
