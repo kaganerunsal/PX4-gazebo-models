@@ -210,17 +210,17 @@
     
     <include>
       <uri>../models/docking_station/model.sdf</uri>
-      <pose>0 0 0.13 0 0 -1.5708</pose>
+      <pose>4 2 0.13 0 0 -1.5708</pose>
     </include>
 
-    <include>
+    <!-- <include>
       <uri>../models/scaffolding_Krause/model.sdf</uri>
       <pose>-2 0 0 0 0 1.5708</pose>
-    </include>
+    </include> -->
 
       <include>
       <uri>../models/ladder_Zarges/model.sdf</uri>
-      <pose>2 0 0 0 0 1.5708</pose>
+      <pose>0 0 0 0 0 1.5708</pose>
     </include>
     
     <model name="ground_plane">
