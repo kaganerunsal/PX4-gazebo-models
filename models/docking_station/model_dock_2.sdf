@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+
+<sdf version="1.10">
+
+    <model name="docking_station">
+
+        <pose>0 0 0 0 0 0</pose>
+        <self_collide>false</self_collide>
+        <static>false</static>
+
+        <link name="shell">
+
+            <pose>0 0 0 0 0 0</pose>
+
+            <inertial>
+                <pose>0 0 0 0 0 0</pose>
+                <mass>4.0</mass> 
+                <inertia>
+                    <ixx>0.02</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.02</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.02</izz>
+                </inertia>
+            </inertial>
+
+            <collision name="shell_collision">
+                <pose>0.0 0.0 0.0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>0.001 0.001 0.001</scale>
+                        <uri>meshes/shell.obj</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name="shell_visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>0.001 0.001 0.001</scale>
+                        <uri>meshes/shell.obj</uri>
+                    </mesh>
+                </geometry>
+                <cast_shadows>false</cast_shadows>
+            </visual>
+
+            <visual name="shell_face">
+                <pose>0.0 0.0 0.12 0 0 0</pose>
+                <geometry>
+                    <box>
+                      <size>0.25 0.25 0.001</size>
+                    </box>
+                </geometry>
+                <material>
+                    <diffuse>1.0 1.0 1.0 1.0</diffuse> 
+                    <pbr> 
+                        <metal>              
+                            <albedo_map>materials/textures/tag36h11-2.png</albedo_map>
+                            <metalness>0.0</metalness>
+                            <roughness>1.0</roughness>
+                        </metal>                  
+                    </pbr>
+                </material>          
+            </visual>
+
+        </link>
+
+        <link name="tray">
+
+            <pose>0 0 0 0 0 0</pose>
+
+            <inertial>
+                <pose>0 0 0 0 0 0</pose>
+                <mass>1.0</mass> 
+                <inertia>
+                    <ixx>0.01</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.01</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.01</izz>
+                </inertia>
+            </inertial>
+
+            <collision name="tray_collision">
+                <pose>0.0 0.0 0.0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>0.001 0.001 0.001</scale>
+                        <uri>meshes/tray.obj</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name="tray_visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>0.001 0.001 0.001</scale>
+                        <uri>meshes/tray.obj</uri>
+                    </mesh>
+                </geometry>
+                <cast_shadows>false</cast_shadows>
+            </visual>
+
+            <visual name="tray_face">
+                <pose>0.0 -0.12 -0.06 0 0 0</pose>
+                <geometry>
+                    <box>
+                      <size>0.125 0.125 0.001</size>
+                    </box>
+                </geometry>
+                <material>
+                    <diffuse>1.0 1.0 1.0 1.0</diffuse> 
+                    <pbr> 
+                        <metal>              
+                            <albedo_map>materials/textures/tag36h11-3.png</albedo_map>
+                            <metalness>0.0</metalness>
+                            <roughness>1.0</roughness>
+                        </metal>                  
+                    </pbr>
+                </material>          
+            </visual>
+
+        </link>
+
+        <joint name="tray_joint" type="prismatic">
+            <pose>0 0 0 0 0 0</pose>
+            <parent>shell</parent>
+            <child>tray</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>-0.4</lower>
+                    <upper>0.0</upper>
+                    <effort>1000</effort>
+                </limit>
+                <dynamics>
+                    <damping>0.1</damping>
+                    <friction>10.0</friction>
+                </dynamics>
+            </axis>
+        </joint>
+
+        <joint name="tray_joint_fixed" type="fixed">
+            <pose>0 0 0 0 0 0</pose>
+            <parent>world</parent>
+            <child>shell</child>
+        </joint>
+
+        <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
+            <joint_name>tray_joint</joint_name>
+            <use_force_commands>false</use_force_commands>
+            <topic>/dock_2/tray_cmd</topic>
+            <initial_velocity>0.0</initial_velocity>
+        </plugin>
+
+        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+            <joint_name>tray_joint</joint_name>
+            <topic>/dock_2/tray_pos</topic>
+            <update_rate>10</update_rate>
+        </plugin>
+
+        <plugin name="gz::sim::systems::PosePublisher" filename="gz-sim-pose-publisher-system">
+            <use_pose_vector_msg>true</use_pose_vector_msg>
+            <publish_nested_model_pose>true</publish_nested_model_pose>
+            <publish_collision_pose>false</publish_collision_pose>
+            <publish_visual_pose>false</publish_visual_pose>
+            <publish_link_pose>false</publish_link_pose> 
+            <update_frequency>100</update_frequency>
+        </plugin>
+
+  </model>
+
+</sdf>
