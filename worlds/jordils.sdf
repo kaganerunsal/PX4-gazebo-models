@@ -208,10 +208,8 @@
       <intensity>2</intensity>
     </light>
     
-    <include>
-      <uri>../models/docking_station/model.sdf</uri>
-      <pose>4 2 0.13 0 0 -1.5708</pose>
-    </include>
+    <!-- Docking stations are spawned at runtime by launch/simulation.py (one per
+         fleet entry, name dock_j, per-dock tray topics), not included here. -->
 
     <!-- <include>
       <uri>../models/scaffolding_Krause/model.sdf</uri>

@@ -153,13 +153,13 @@
         <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
             <joint_name>tray_joint</joint_name>
             <use_force_commands>false</use_force_commands>
-            <topic>/docking_station/tray_cmd</topic>
+            <topic>/dock_1/tray_cmd</topic>
             <initial_velocity>0.0</initial_velocity>
         </plugin>
 
         <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
             <joint_name>tray_joint</joint_name>
-            <topic>/docking_station/tray_pos</topic>
+            <topic>/dock_1/tray_pos</topic>
             <update_rate>10</update_rate>
         </plugin>
 
