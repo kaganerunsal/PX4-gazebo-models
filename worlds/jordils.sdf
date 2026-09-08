@@ -211,15 +211,15 @@
     <!-- Docking stations are spawned at runtime by launch/simulation.py (one per
          fleet entry, name dock_j, per-dock tray topics), not included here. -->
 
-    <!-- <include>
+    <include>
       <uri>../models/scaffolding_Krause/model.sdf</uri>
       <pose>-2 0 0 0 0 1.5708</pose>
-    </include> -->
+    </include>
 
-    <include>
+    <!--<include>
       <uri>../models/ladder_Zarges/model.sdf</uri>
       <pose>0 0 0 0 0 1.5708</pose>
-    </include>
+    </include> -->
     
     <model name="ground_plane">
       <static>true</static>
